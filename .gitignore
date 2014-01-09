@@ -1,0 +1,17 @@
+*.swp
+*.pyc
+*.bbl
+*.aux
+*.bbl
+*.blg
+*latexmk
+*.fls
+*.lof
+*.log
+*.out
+*-blx.bib
+*.nav
+*.run.xml
+*.snm
+*.toc
+
