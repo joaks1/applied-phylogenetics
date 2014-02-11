@@ -1,0 +1,112 @@
+\documentclass{article}
+
+\setcounter{page}{1}
+\setlength{\oddsidemargin}{0.in}
+\setlength{\evensidemargin}{0.in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\headheight}{0.17in}
+\setlength{\headsep}{0.35in}
+\setlength{\textheight}{9.in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{.1in}
+\usepackage[T1]{fontenc}
+\usepackage[round]{natbib}
+\bibliographystyle{../../bst/sysbio}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{paralist}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{backref, urlcolor=blue, linkcolor=blue, citecolor=blue,  colorlinks=true}
+
+% use the fancyhdr package to allow both headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear all headers and footers
+\fancyhead[RO,LE]{BEAST v1.7.5 Divergence-time Estimation Demo}
+% \fancyhead[RO,LE]{2012}
+\fancyfoot[LO,LE]{\footnotesize Tutorial content released under Creative Commons Attribution 3.0 Unported License.}
+\fancyfoot[CE,CO]{}
+\fancyfoot[RO,RE]{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% \floatstyle{boxed}
+% \restylefloat{figure}
+% \restylefloat{table}
+\newfloat{textbox}{hptb}{lotb}
+\floatname{textbox}{Box}
+
+\newcommand{\execmd}[1]{\texttt{#1}\\}
+\newcommand{\cmdopt}[1]{\texttt{#1}\xspace}
+\newcommand{\cmd}[1]{\texttt{#1}\xspace}
+\newcommand{\beast}{\href{http://beast.bio.ed.ac.uk/Main_Page}{\texttt{BEAST}}\xspace}
+\newcommand{\localfile}[1]{\textsf{#1}\xspace}
+\newcommand{\QandA}[2]{\textit{#1}\footnote{#2}\xspace}
+\newcommand{\todo}[1]{{\color{red}TODO: {#1}}}
+\newcommand{\subItem}[2]{{``#1''}\guillemotright{``#2''}}
+\newcommand{\subsubItem}[3]{{``#1''}\guillemotright{``#2''}\guillemotright{``#3''}}
+
+
+\begin{document}
+{\singlespacing \tableofcontents}
+\newpage
+\section{BEAST Divergence-time Lab}
+%###########################################################################################
+
+The goal of this tutorial is to help you become familiar with using fossil data
+to estimate time-calibrated phylogenetic trees in a Bayesian framework.
+We will use an example dataset of DNA sequences of crocodylians (crocodiles and alligators)
+and the software package \beast version 1.7.5.
+We will work through the steps necessary for estimating the phylogenetic
+relationships among crocodiles and alligators, while simultaneously using
+fossil information and relaxed-clock models to calibrate the branches on the
+tree to units of time (millions of years).
+
+% The stylistic conventions for this tutorial:
+% \begin{tabular}{|p{3.2in}p{2.8in}|}
+% \hline	Names of files & \localfile{in  this font}.\\
+% \hline	Web site URLs and other clickable links &  \href{http://www.google.com}{look  like this}.\\
+% \hline	Nested menu items or graphical elements in a hierarchical display & \subsubItem{Top Name}{Mid Name}{Lowest}\\
+% \hline
+% \end{tabular}
+\subsection{Version and Author information}
+This tutorial was written for \beast version 1.7.5.
+
+This tutorial was written by Jamie Oaks.
+
+\section{Background Information}
+
+\section{The Data}
+
+\section{Tutorial}
+\newcounter{stepCounter}
+\newcommand{\step}[2]{\addtocounter{stepCounter}{1} {\bf \hypertarget{step\arabic{stepCounter}}{Step \arabic{stepCounter}:}}\xspace #2\par}
+\newcommand{\intermediate}[1]{#1}
+\input{div-time-tutorial-steps.tex}
+
+That's it!
+
+\newpage
+\section{Quick version of the tutorial}
+\setcounter{stepCounter}{0}
+\renewcommand{\step}[2]{\addtocounter{stepCounter}{1} {\bf \hyperlink{step\arabic{stepCounter}}{Step \arabic{stepCounter}}:}\xspace #1\par}
+\renewcommand{\intermediate}[1]{}
+\input{div-time-tutorial-steps.tex}
+
+\newpage
+\section{Additional Information/Resources}
+Fantastic
+\href{http://treethinkers.org/divergence-time-estimation-using-beast/}{tutorial}
+and
+\href{https://molevol.mbl.edu/wiki/images/6/6f/Bodega_2013_divtime_lecture.pdf}{slides}
+by \href{http://phylo.bio.ku.edu/content/tracy-heath}{Tracy Heath}!
+
+\newpage
+\bibliography{../../bib/references}
+
+\end{document}
+
