@@ -182,7 +182,7 @@
     \begin{figure}[htbp]
         \centering
         \fbox{\includegraphics[width=0.4\textwidth]{../screenshots/beauti-create-trait-subwindow.jpg}}
-        \caption{All three taxon sets defined.}
+        \caption{Creating a new trait.}
         \label{fig:beautiCreateTraitSubWindow}
     \end{figure}
 
@@ -197,15 +197,74 @@
     \begin{figure}[htbp]
         \centering
         \fbox{\includegraphics[width=0.5\textwidth]{../screenshots/beauti-guess-trait-subwindow.jpg}}
-        \caption{All three taxon sets defined.}
+        \caption{\field{Guess trait} options.}
         \label{fig:beautiGuessTraitSubWindow}
     \end{figure}
 
     \begin{figure}[htbp]
         \centering
         \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-traits.jpg}}
-        \caption{All three taxon sets defined.}
+        \caption{Geographic traits successfully defined.}
         \label{fig:beautiTraits}
     \end{figure}
 }
+
+\step{Define Markov-chain models of substitution}{
+    Next, we need to set up our continuous-time Markov chain (CTMC) models
+    of substitution under the \menutab{Sites} tab.
+    Once in the \menutab{Sites} tab, and with \fieldvalue{crocodylia-cytb} selected
+    in the left \field{Substitution Model} window, select the following options:
+    \begin{compactdesc}
+        \centering
+        \item[\field{Substitution Model:}] \fieldvalue{HKY}
+        \item[\field{Base frequencies:}] \fieldvalue{Estimated}
+        \item[\field{Site Heterogeneity Model:}] \fieldvalue{Gamma}
+        \item[\field{Number of Gamma Categories:}] \fieldvalue{4}
+        \item[\field{Partition into codon positions:}] \fieldvalue{3 partitions: positions 1, 2, 3}
+    \end{compactdesc}
+    Lastly, check all three \field{Unlink parameters} options (Figure~\ref{fig:beautiCytbModel}).
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-cytb-model.jpg}}
+        \caption{The CTMC model of nucleotide substitution for cytb.}
+        \label{fig:beautiCytbModel}
+    \end{figure}
+
+    Next, select \fieldvalue{geography} in the left \field{Substitution Model}
+    window, and select \fieldvalue{Asymmetric substitution model} for the
+    \field{Discrete Trait Substitution Model} drop-down option. Check the box
+    for \field{Infer social network with BSSVS} (Figure~\ref{fig:beautiGeoModel}).
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-geo-model.jpg}}
+        \caption{The CTMC model for the geographic character.}
+        \label{fig:beautiGeoModel}
+    \end{figure}
+}
+
+\step{Define clock models.}{
+    Next, we need to move to the \menutab{Clocks} tab and specify our models of
+    branch rates across the tree. BEAUTi provides four options for clock
+    models:
+    \begin{compactdesc}
+        \item[\fieldvalue{Strict clock}] Assumes a constant rate of
+            substitution across all the branches of the tree.
+        \item[\fieldvalue{Lognormal relaxed clock (Uncorrelated)}] Assumes that
+            the rates of substitution on each branch of the tree are independent
+            and drawn from a single, discretized lognormal distribution
+            \citep{Drummond2006}.
+        \item[\fieldvalue{Exponential relaxed clock (Uncorrelated)}]  Assumes that
+            the rates of substitution on each branch of the tree are independent
+            and drawn from a single, exponential distribution
+            \citep{Drummond2006}.
+        \item[\field{Random local clock}] Uses Bayesian stochastic search
+            variable selection (BSSVS) to average over local clock models
+            (i.e., it averages over the number of rate changes and their
+            locations) \citep{DrummondSuchard2010}.
+        \item[\field{Site Heterogeneity Model:}] \fieldvalue{Gamma}
+        \item[\field{Number of Gamma Categories:}] \fieldvalue{4}
+        \item[\field{Partition into codon positions:}] \fieldvalue{3 partitions: positions 1, 2, 3}
+    \end{compactdesc}
 
