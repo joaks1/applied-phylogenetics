@@ -246,8 +246,8 @@
 
 \step{Define clock models.}{
     Next, we need to move to the \menutab{Clocks} tab and specify our models of
-    branch rates across the tree. BEAUTi provides four options for clock
-    models:
+    branch rates across the tree. BEAUTi provides one strict-clock and
+    three relaxed-clock options:
     \begin{compactdesc}
         \item[\fieldvalue{Strict clock}] Assumes a constant rate of
             substitution across all the branches of the tree.
@@ -259,12 +259,238 @@
             the rates of substitution on each branch of the tree are independent
             and drawn from a single, exponential distribution
             \citep{Drummond2006}.
-        \item[\field{Random local clock}] Uses Bayesian stochastic search
+        \item[\fieldvalue{Random local clock}] Uses Bayesian stochastic search
             variable selection (BSSVS) to average over local clock models
             (i.e., it averages over the number of rate changes and their
             locations) \citep{DrummondSuchard2010}.
-        \item[\field{Site Heterogeneity Model:}] \fieldvalue{Gamma}
-        \item[\field{Number of Gamma Categories:}] \fieldvalue{4}
-        \item[\field{Partition into codon positions:}] \fieldvalue{3 partitions: positions 1, 2, 3}
     \end{compactdesc}
 
+    In general, it is best to compare (or sample over) different clock models.
+    But, for the sake of keeping this tutorial simple, we will select the most
+    commonly used relaxed-clock model for the cytb data.
+    For the \fieldvalue{crocodylia-cytb} data, select the \fieldvalue{Lognormal
+    relaxed clock (Uncorrelated)}.
+    For the \fieldvalue{geography} trait, select the \fieldvalue{Strict clock
+    model}.
+    Make sure to click the \field{Estimate} box for both models
+    (Figure~\ref{fig:beautiClocks}).  You do not need to worry about the
+    \field{Clock Model Group} options in the lower window.
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-clocks.jpg}}
+        \caption{The clock-model settings.}
+        \label{fig:beautiClocks}
+    \end{figure}
+}
+
+\step{Select the tree prior.}{
+    Next, let's move to the \menutab{Trees} tab to specify the prior and
+    starting conditions for our tree.
+    Select the \fieldvalue{Speciation: Birth-Death Process} option from the
+    drop-down for the \field{Tree Prior} option.
+    Select \fieldvalue{Random starting tree} in the lower window
+    (Figure~\ref{fig:beautiTrees}.
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-trees.jpg}}
+        \caption{The tree-prior settings.}
+        \label{fig:beautiTrees}
+    \end{figure}
+
+    BEAUTi offers a number of tree prior options. Those labeled
+    \fieldvalue{Speciation} are based on stochastic branching processes that
+    assume the tips of the phylogeny are species. The \fieldvalue{Coalescent}
+    tree priors are based on stochastic processes of lineage coalescence that
+    assume the tips of the tree are gene copies within a population.
+}
+
+\step{Set the \field{States} options.}{
+    Move to the \menutab{States} tab.
+    With the \fieldvalue{crocodylia-cytb} \field{Partition} selected in the
+    left column, leave all of the settings unchecked and the \field{Error
+    Model} \fieldvalue{Off} (Figure~\ref{fig:beautiCytbStates}).
+    Next, select the \fieldvalue{geography} \field{Partition} in the left column,
+    check the \field{Reconstruct states at all ancestors} box, and leave all other
+    options unchecked (Figure~\ref{fig:beautiGeoStates}).
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.7\textwidth]{../screenshots/beauti-cytb-states.jpg}}
+        \caption{The \menutab{States} settings for cytb.}
+        \label{fig:beautiCytbStates}
+    \end{figure}
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.5\textwidth]{../screenshots/beauti-geo-states.jpg}}
+        \caption{The \menutab{States} settings for geography.}
+        \label{fig:beautiGeoStates}
+    \end{figure}
+}
+
+\step{Select priors for parameters.}{
+    Move to the \menutab{Priors} tab.
+    Here we see that all of the model parameters and statistics that we
+    specified under the other tabs are listed.
+    Now, we can specify prior probability distributions on the
+    substitution-model parameters, relaxed-clock parameters, tree-prior
+    parameters, and the time (age) of the most recent common ancestor (TMRCA)
+    of the taxon sets we specified earlier.
+
+    Let's start by selecting priors for the \fieldvalue{CP1.mu},
+    \fieldvalue{CP2.mu}, and \fieldvalue{CP3.mu} parameters. These are
+    relative-rate parameters that allow sites at the three codon positions to
+    evolve at different rates. Based on our knowledge of the redundancy of the
+    genetic code, we expect the sites at third-codon position to evolve more
+    rapidly than the first and second codon sites \emph{a priori}.
+    So we will specify our priors accordingly.
+
+    Click on the \field{Prior} column for the \fieldvalue{CP1.mu} parameter.
+    In the window that pops up, select an \fieldvalue{Exponential} \field{Prior
+    Distribution}, and specify a \field{Mean} of \fieldvalue{0.5}.
+    Do the same for \fieldvalue{CP2.mu}.
+    For \fieldvalue{CP3.mu}, also select and \fieldvalue{Exponential}
+    \field{Prior}, but set the \field{Mean} to \fieldvalue{5.0}
+    (Figure~\ref{fig:beautiPriorsCPmu}).
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-cp1mu.jpg}
+            \caption{CP1.mu.}
+            \label{fig:beautiPriorsCP1mu}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-cp2mu.jpg}
+            \caption{CP2.mu.}
+            \label{fig:beautiPriorsCP2mu}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-cp3mu.jpg}
+            \caption{CP2.mu.}
+            \label{fig:beautiPriorsCP3mu}
+        \end{subfigure}
+        \caption{Priors for relative-rate parameters.}
+        \label{fig:beautiPriorsCPmu}
+    \end{figure}
+
+    Next, click on the \field{Prior} column for the
+    \fieldvalue{crocodylia-cytb.ucld.mean} parameter.
+    This parameter controls the mean of the log-normal distribution from which
+    the rates of each branch of the tree are drawn.
+    Because we will be using fossils to calibrate the overall rate of substitution,
+    we will use a very diffuse prior for this parameter.
+    Select \fieldvalue{Exponential} for the \field{Prior}
+    and specify \fieldvalue{0.05} for the \field{Mean}
+    (Figure~\ref{fig:beautiPriorsUcldMean}).
+    Because we will be specifying node-age priors in units of millions of
+    years, the mean of 0.05 for prior on \fieldvalue{crocodylia-cytb.ucld.mean}
+    translates to a mean rate of 5\% per million years.
+
+    Specify an \fieldvalue{Exponential} prior for the
+    \fieldvalue{geography.clock.rate}, but with a \field{Mean} of
+    \fieldvalue{0.01} (Figure~\ref{fig:beautiPriorsClockRate}).
+
+    The default prior for the \fieldvalue{birthDeath.meanGrowthRate}
+    is \fieldvalue{Uniform} from \fieldvalue{0} to \fieldvalue{10000}.
+    This is a very broad prior.
+    Based on our knowledge of the crocodylian fossil record, we can get
+    a rough idea of our prior expectations for this parameter.
+    Given the age of the oldest crocodylian fossil is 71.3 million
+    years, we know the height of our tree is at least that.
+    Given that, we can calculate a pure-birth (Yule process) rate that has an
+    expected tree height of 71.3 million years.
+    I have included a Python script \localfile{yule.py} in the tutorial
+    download that performs such calculations.
+
+    \hspace{1cm}\cmd{Python yule.py height 71.3 24}
+
+    which will produce the following output:
+
+    \cmd{ntips = 24}\\
+    \cmd{rate = 0.0389334947792}\\
+    \cmd{height = 71.3}\\
+    \cmd{length = 590.750974976}
+
+    Thus, the largest we expect a pure-birth rate to be is around 0.04.
+    This allows us to specify a much better prior than the default, while
+    still diffuse.
+    Specify an \fieldvalue{Exponential} prior for the
+    \fieldvalue{birthDeath.meanGrowthRate}, but with a \field{Mean} of
+    \fieldvalue{0.1} (Figure~\ref{fig:beautiPriorsBirthRate}).
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-ucldmean.jpg}
+            \caption{crocodylia-cytb.ucld.mean.}
+            \label{fig:beautiPriorsUcldMean}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.29\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-clockrate.jpg}
+            \caption{geography.clock.rate.}
+            \label{fig:beautiPriorsClockRate}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.31\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-birthrate.jpg}
+            \caption{birthDeath.meanGrowthRate.}
+            \label{fig:beautiPriorsBirthRate}
+        \end{subfigure}
+        \caption{Priors for clock rates and diversification rate.}
+        \label{fig:beautiPriorsClocks}
+    \end{figure}
+}
+
+\step{Select priors for node ages!}{
+    Next, we need to specify our node-age priors based on fossil information.
+
+    For \fieldvalue{tmrca(Alligatoridae)} select \fieldvalue{Gamma} for the
+    \field{Prior Distribution}, and specify \fieldvalue{2} for both the
+    \field{Shape} and \field{Scale} and \fieldvalue{64} for the
+    \field{Offset}
+    (Figure~\ref{fig:beautiPriorsAlligatoridae}).
+
+    For \fieldvalue{tmrca(Crocodylus)} select \fieldvalue{Exponential} for the
+    \field{Prior Distribution}, and specify \fieldvalue{10} for the mean
+    and \fieldvalue{12} for the \field{Offset}
+    (Figure~\ref{fig:beautiPriorsCrocodylus}).
+
+    For \fieldvalue{tmrca(Caiman)} select \fieldvalue{Exponential} for the
+    \field{Prior Distribution}, and specify \fieldvalue{4} for the mean
+    and \fieldvalue{9} for the \field{Offset}
+    (Figure~\ref{fig:beautiPriorsCaiman}).
+
+    For \fieldvalue{treeModel.rootHeight} select \fieldvalue{Gamma} for the
+    \field{Prior Distribution}, and specify \fieldvalue{78} for the
+    \field{Initial value}, \fieldvalue{1.5} for the \field{Shape},
+    \fieldvalue{6.0} for the \field{Scale}, and \fieldvalue{71.3} for the
+    \field{Offset}. Also, make sure \field{Truncate to} is unchecked
+    (Figure~\ref{fig:beautiPriorsRoot}).
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[b]{0.33\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-alligatoridae.jpg}
+            \caption{tmrca(Alligatoridae).}
+            \label{fig:beautiPriorsAlligatoridae}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.35\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-crocodylus.jpg}
+            \caption{tmrca(Crocodylus).}
+            \label{fig:beautiPriorsCrocodylus}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.35\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-caiman.jpg}
+            \caption{tmrca(Caiman).}
+            \label{fig:beautiPriorsCaiman}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.315\textwidth}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-root.jpg}
+            \caption{treeModel.rootHeight.}
+            \label{fig:beautiPriorsRoot}
+        \end{subfigure}
+        \caption{Priors for clock rates and diversification rate.}
+        \label{fig:beautiPriorsClocks}
+    \end{figure}
+}
