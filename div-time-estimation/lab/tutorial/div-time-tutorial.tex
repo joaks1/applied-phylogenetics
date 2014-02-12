@@ -13,6 +13,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[round]{natbib}
 \bibliographystyle{../../bst/sysbio}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
 \usepackage{xspace}
 \usepackage{verbatim}
 \usepackage{paralist}
@@ -43,12 +45,18 @@
 \newcommand{\execmd}[1]{\texttt{#1}\\}
 \newcommand{\cmdopt}[1]{\texttt{#1}\xspace}
 \newcommand{\cmd}[1]{\texttt{#1}\xspace}
-\newcommand{\beast}{\href{http://beast.bio.ed.ac.uk/Main_Page}{\texttt{BEAST}}\xspace}
 \newcommand{\localfile}[1]{\textsf{#1}\xspace}
 \newcommand{\QandA}[2]{\textit{#1}\footnote{#2}\xspace}
-\newcommand{\todo}[1]{{\color{red}TODO: {#1}}}
-\newcommand{\subItem}[2]{{``#1''}\guillemotright{``#2''}}
-\newcommand{\subsubItem}[3]{{``#1''}\guillemotright{``#2''}\guillemotright{``#3''}}
+\newcommand{\todo}[1]{{\color{red}TODO: {#1}}\xspace}
+\newcommand{\menutab}[1]{\textbf{\textit{#1}}\xspace}
+\newcommand{\subItem}[2]{\menutab{#1}$\rightarrow$\menutab{#2}\xspace}
+\newcommand{\subsubItem}[3]{\menutab{#1}$\rightarrow$\menutab{#2}$\rightarrow$\menutab{#3}\xspace}
+\newcommand{\program}[1]{#1\xspace}
+\newcommand{\plusbutton}{``$\boldsymbol{+}$''\xspace}
+\newcommand{\beast}{\href{http://beast.bio.ed.ac.uk/Main_Page}{\program{BEAST}}\xspace}
+\newcommand{\taxonset}[1]{{\bfseries\sffamily #1}\xspace}
+\newcommand{\field}[1]{\texttt{#1}\xspace}
+\newcommand{\fieldvalue}[1]{{\bfseries\sffamily #1}\xspace}
 
 
 \begin{document}
@@ -57,6 +65,7 @@
 \section{BEAST Divergence-time Lab}
 %###########################################################################################
 
+\section{Objective}
 The goal of this tutorial is to help you become familiar with using fossil data
 to estimate time-calibrated phylogenetic trees in a Bayesian framework.
 We will use an example dataset of DNA sequences of crocodylians (crocodiles and alligators)
@@ -73,7 +82,7 @@ tree to units of time (millions of years).
 % \hline	Nested menu items or graphical elements in a hierarchical display & \subsubItem{Top Name}{Mid Name}{Lowest}\\
 % \hline
 % \end{tabular}
-\subsection{Version and Author information}
+\section{Version and Author information}
 This tutorial was written for \beast version 1.7.5.
 
 This tutorial was written by Jamie Oaks.
@@ -81,6 +90,13 @@ This tutorial was written by Jamie Oaks.
 \section{Background Information}
 
 \section{The Data}
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.8\textwidth]{../../images/crocodylia-fossils.pdf}}
+        \caption{A phylogenetic estimate of Crocodylia with rough fossil placements.}
+        \label{fig:crocFossils}
+    \end{figure}
 
 \section{Tutorial}
 \newcounter{stepCounter}
