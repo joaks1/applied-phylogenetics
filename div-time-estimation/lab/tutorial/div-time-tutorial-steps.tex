@@ -6,8 +6,13 @@
     This tutorial is written for version 1.7.5 of \beast.
 }
 
-\step{Download data files from \todo{HERE}.}{
-    All of the files needed for this exercise can be downloaded from \todo{HERE}.
+\step{Download the data and other files from Google Drive.}{
+    Download the \localfile{div-time-tutorial.zip} archive from the Google Drive
+    folder to your desktop, and unzip the archive.
+    You should now have a \localfile{div-time-tutorial} folder on your desktop,
+    and it should contain the files and folders shown in
+    Box~\ref{box:tutorialDir}.
+
     \begin{textbox}
         \centering
         \fbox{\begin{minipage}[c][10em][c]{0.5\textwidth}
@@ -16,7 +21,6 @@
                 \item div-time-tutorial/
                 \begin{compactitem}
                     \item crocodylia-cytb.nex
-                    \item div-time-tutorial.pdf
                     \item yule.py
                     \item output/
                     \begin{compactitem}
@@ -410,18 +414,21 @@
     I have included a Python script \localfile{yule.py} in the tutorial
     download that performs such calculations.
 
+    You do not have to do this now, but if you open a \program{Terminal}
+    window and invoke the script as follows:
+
     \hspace{1cm}\cmd{Python yule.py height 71.3 24}
 
-    which will produce the following output:
+    you get the following output:
 
     \cmd{ntips = 24}\\
     \cmd{rate = 0.0389334947792}\\
     \cmd{height = 71.3}\\
     \cmd{length = 590.750974976}
 
-    Thus, the largest we expect a pure-birth rate to be is around 0.04.
-    This allows us to specify a much better prior than the default, while
-    still diffuse.
+    From these results, we see that the largest we expect a pure-birth rate to
+    be is around 0.04.
+    This allows us to specify a much better prior than the default.
     Specify an \fieldvalue{Exponential} prior for the
     \fieldvalue{birthDeath.meanGrowthRate}, but with a \field{Mean} of
     \fieldvalue{0.1} (Figure~\ref{fig:beautiPriorsBirthRate}).
@@ -448,7 +455,12 @@
         \label{fig:beautiPriorsClocks}
     \end{figure}
 
-    \todo{We will assign you to groups for different priors on the \fieldvalue{ucld.stdev}.}
+    You will also specify an \fieldvalue{Exponential} prior for the
+    \fieldvalue{ucld.stdev} parameter.
+    {\color{red}We will assign you a value to specify for the \field{Mean} of
+    this distribution.}
+    At the end of the lab we will compare are our findings to see how sensitive
+    the analysis is to this prior.
 }
 
 \step{Select priors for node ages!}{
@@ -584,7 +596,7 @@
     \end{figure}
 }
 
-\intermediate{\subsection{Inspect previous results with \program{Tracer}}}
+\intermediate{\subsection{Inspecting previous results with \program{Tracer}}}
 
 \intermediate{
     In the \localfile{div-time-tutorial} folder, there is a subfolder called
@@ -592,38 +604,97 @@
     from analyses I ran previously.
 }
 
-\step{Inspect previous results with \program{Tracer}}{
+\step{Inspect previous results with \program{Tracer}.}{
     Launch the \program{Tracer} program.
-    Load the two log files in the \localfile{output} directory into
+    Load the \localfile{crocodylia-cytb-run1.log} and
+    \localfile{crocodylia-cytb-run2.log} in the \localfile{output} directory
+    into
     \program{Tracer} using \subItem{File}{Import Trace File\ldots} or the
     \plusbutton button.
 
+    Use Tracer to inspect the behavior of the two MCMC chains.
+
+    \question{Does it look like the chains reached stationarity?}
+
+    \question{Does it look like both chains converged to the same stationarity
+    distribution?}
+
+    \question{What do we call this stationary distribution?}
+
+    Now, load the \localfile{crocodylia-cytb-prior.log} file into
+    \program{Tracer}.
+    This log file is from the analysis that sampled only from the prior
+    distribution.
+    Use \program{Tracer} to compare the prior and posterior samples.
+
+    \question{Are any of the parameter estimates similar between the prior and
+    posterior? Which ones?}
 }
 
 \intermediate{\subsection{Summarizing the trees with \program{LogCombiner} and \program{TreeAnnotator}}}
+
+\intermediate{
 Once you have reviewed the log files from the independent runs in Tracer and determined that they have 
 reached stationarity, you can combine the sampled trees into a single tree file.
+}
 
-\step{Combine tree files using \program{LogCombiner}}{
+\step{Combine tree files using \program{LogCombiner}.}{
 	Launch the \program{LogCombiner} program.
 	Change the \field{File type:} to \field{Tree Files}.
-	Load the two \localfile{.trees} files in the \localfile{output} directory into
+	Load the \localfile{crocodylia-cytb-run1.trees} and \localfile{crocodylia-cytb-run2.trees} file in the \localfile{output} directory into
 	\program{LogCombiner} using the \plusbutton button.
-	Select the \field{Choose File\Idots} button and specify the \localfile{output}
-	directory and a file name, \localfile{crocodylia.trees????}.
+	Select the \field{Choose File\ldots} button and specify the \localfile{output}
+	directory and a file name, \localfile{crocodylia-cytb-runs1and2.trees}.
+    Specify an appropriate burn-in value based on what you saw in \program{Tracer}.
 	Click \field{Run}
 }
 
-Now you have a single tree file with all the trees from the two independent runs called \localfile{crocodylia.trees????}.
-TreeAnnotator will summarize the trees and identify the topology with the best support, and calculate xyz.
+\intermediate{Now you have a single tree file with all the trees from the two independent runs called \localfile{crocodylia-cytb-runs1and2.trees}.
+TreeAnnotator will summarize the trees and identify the topology with the best posterior support, and summarize the age estimates for each node in the tree.
+}
 
-\step{Summarize the trees using \program{TreeAnnotator}}{
+\step{Summarize the trees using \program{TreeAnnotator}.}{
 	Launch the \program{TreeAnnotator} program.
-	Specify the burnin value as \fieldvalue{?????}.
-	For the \field{Target tree type}, choose \field{Maximum clade credibility tree}.
-	Select the \field{Input Tree File} button and select the file \localfile{crocodylia.trees????}.
+    Specify the burnin value as \fieldvalue{0} (we removed the burn-in with \program{LogCombiner}.
+	For the \field{Target tree type} field, choose \fieldvalue{Maximum clade credibility tree}.
+    For the \field{Node heights} field, choose \fieldvalue{Median heights}.
+	Select the \field{Input Tree File} button and select the file \localfile{crocodylia-cytb-runs1and2.trees}.
 	Select the \field{Output File} button and specify the \localfile{output} directory and a 
 	file name, \localfile{crocodylia-MCC.tre}.
 	Click \field{Run}
 }
 
+\intermediate{\subsection{Visualizing the tree in \program{FigTree}}}
+
+\step{Look at the summary tree in \program{FigTree}.}{
+    Launch the \program{FigTree} program, and load the \localfile{crocodylia-MCC.tree} file
+    you just created with \program{TreeAnnotator}.
+    Check the \field{Scale Axis} option in the left column, and check the
+    \subItem{Scale Axis}{Reverse axis} box.
+    Check the \field{Node Bars} option and select
+    \fieldvalue{height\_95\%\_HPD} for the \subItem{Node bars}{Display} field.
+
+    \question{What is the age of the most recent common ancestor of all
+    \emph{Crocodylus} species?}
+
+    \question{What is the age of the stem node for \emph{Crocodylus}?}
+}
+
+\intermediate{\subsection{Inspecting your results with \program{Tracer}}}
+
+\step{Inspect the results of your short analysis with \program{Tracer}.}{
+
+    If your analysis has finished, launch the \program{Tracer} program and load
+    the log file created by \program{BEAST}.
+
+    \question{What was the mean you specified for the prior on
+    \fieldvalue{ucld.stdev}?}
+
+    \question{What is your estimate of the mean and 95\% HPD interval for the
+        age of the stem node for \emph{Crocodylus} (hint: the
+        \fieldvalue{tmrca(Crocodylus)} statistic)?}
+
+    \question{Compare your estimate with your classmates that used a different
+    prior on \fieldvalue{ucld.stdev}. Approximately how different are the
+    results? Is there a trend?}
+}
