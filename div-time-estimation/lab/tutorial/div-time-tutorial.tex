@@ -59,12 +59,14 @@
 \newcommand{\taxonset}[1]{{\bfseries\sffamily #1}\xspace}
 \newcommand{\field}[1]{\texttt{#1}\xspace}
 \newcommand{\fieldvalue}[1]{{\bfseries\sffamily #1}\xspace}
+\newcommand{\questionfont}[1]{{\bfseries\sffamily\textit{#1}}\xspace}
+\newcommand{\question}[1]{{\questionfont{#1}\\\vspace{2cm}}\xspace}
 
 
 \begin{document}
+{\Large\bf BEAST Divergence-time Lab}
 {\singlespacing \tableofcontents}
 \newpage
-\section{BEAST Divergence-time Lab}
 %###########################################################################################
 
 \section{Objective}
@@ -77,13 +79,19 @@ relationships among crocodiles and alligators, while simultaneously using
 fossil information and relaxed-clock models to calibrate the branches on the
 tree to units of time (millions of years).
 
-% The stylistic conventions for this tutorial:
-% \begin{tabular}{|p{3.2in}p{2.8in}|}
-% \hline	Names of files & \localfile{in  this font}.\\
-% \hline	Web site URLs and other clickable links &  \href{http://www.google.com}{look  like this}.\\
-% \hline	Nested menu items or graphical elements in a hierarchical display & \subsubItem{Top Name}{Mid Name}{Lowest}\\
-% \hline
-% \end{tabular}
+The stylistic conventions for this tutorial:
+
+\begin{tabular}{|p{3.2in}|p{2.8in}|}
+\hline	Names of files & \localfile{in this font}.\\
+\hline	Web site URLs and other clickable links &  \href{http://www.google.com}{look like this}.\\
+\hline	Nested menu items & \subsubItem{Top Name}{Mid Name}{Lowest}\\
+\hline	\program{BEAUTi} menu tabs & \menutab{tab name}\\
+\hline	\program{BEAUTi} option fields & \field{field name}\\
+\hline	Field values that you enter & \fieldvalue{field value}\\
+\hline	Questions for you to answer & \questionfont{look like this?}\\
+\hline
+\end{tabular}
+
 % \section{Version and Author information}
 % This tutorial was written for \beast version 1.7.5.
 
@@ -105,8 +113,6 @@ tree to units of time (millions of years).
 \newcommand{\step}[2]{\addtocounter{stepCounter}{1} {\bf \hypertarget{step\arabic{stepCounter}}{Step \arabic{stepCounter}:}}\xspace #2\par}
 \newcommand{\intermediate}[1]{#1}
 \input{div-time-tutorial-steps.tex}
-
-That's it!
 
 \newpage
 \section{Quick version of the tutorial}

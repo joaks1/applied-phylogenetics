@@ -10,7 +10,7 @@
     All of the files needed for this exercise can be downloaded from \todo{HERE}.
     \begin{textbox}
         \centering
-        \fbox{\begin{minipage}[c][8em][c]{0.5\textwidth}
+        \fbox{\begin{minipage}[c][10em][c]{0.5\textwidth}
             \ttfamily
             \begin{compactitem}
                 \item div-time-tutorial/
@@ -21,11 +21,15 @@
                     \item output/
                     \begin{compactitem}
                         \item crocodylia-cytb-run1.log
+                        \item crocodylia-cytb-run2.log
+                        \item crocodylia-cytb-run1.trees
+                        \item crocodylia-cytb-run2.trees
                     \end{compactitem}
                 \end{compactitem}
             \end{compactitem}
         \end{minipage}}
         \caption{The files required for this tutorial.}
+        \label{box:tutorialDir}
     \end{textbox}
 }
 
@@ -74,14 +78,14 @@
     containing the fossil taxon \emph{Navajosuchus mooki}; this clade has
     the family name Alligatoridae.
 
-    Click on the \menutab{Taxon Sets} tab. Once in the \menutab{Taxon Sets}
+    Click on the \menutab{Taxa} tab. Once in the \menutab{Taxa}
     tab, click on the \plusbutton near the bottom-left corner of the window.
     This will create an untitled taxon set in the left-most box in the window.
-    Change the name of this taxon set to \taxonset{Alligatoridae} and enter 65
+    Change the name of this taxon set to \taxonset{Alligatoridae} and enter \fieldvalue{65}
     into Age column. This age is simply a starting value for the age of the
     MRCA of \taxonset{Alligatoridae}. It will ensure that the initial tree used
     to start the analysis is consistent with the lower bound of our fossil
-    calibration (which will by 64 million years).
+    calibration (which will be 64 million years).
     
     We do not want to constrain \taxonset{Alligatoridae} to be monophyletic, so
     leave the \field{Mono?} box unchecked. Also, we are confident that
@@ -159,59 +163,59 @@
     \end{figure}
 }
 
-\step{Define geographic traits.}{
-    Next we will use the \menutab{Traits} tab to define a new character for
-    the geographic location of each species.
-    This step is unrelated to divergence-time estimation. It will allow us to
-    estimate the geographic locations of ancestral species across the
-    phylogeny.
-    Investigators are often interested in estimating ancestral states for
-    characters of interest, so it is worth seeing how that can be done for in
-    \beast while jointly estimating the phylogeny and divergence times.
-    However, you will be learning all about ancestral character-state
-    estimation in coming weeks, and so we will gloss over a lot of details to
-    maintain the focus on divergence-time estimation.
+% \step{Define geographic traits.}{
+%     Next we will use the \menutab{Traits} tab to define a new character for
+%     the geographic location of each species.
+%     This step is unrelated to divergence-time estimation. It will allow us to
+%     estimate the geographic locations of ancestral species across the
+%     phylogeny.
+%     Investigators are often interested in estimating ancestral states for
+%     characters of interest, so it is worth seeing how that can be done for in
+%     \beast while jointly estimating the phylogeny and divergence times.
+%     However, you will be learning all about ancestral character-state
+%     estimation in coming weeks, and so we will gloss over a lot of details to
+%     maintain the focus on divergence-time estimation.
 
-    Once in the \menutab{Traits} tab, click the \plusbutton button (or the
-    \field{Add trait} button). Once the \field{Create or Import Trait(s)}
-    sub-window pops up, change the \field{Name} to \fieldvalue{geography}, set
-    the \field{Type} to \fieldvalue{discrete}, and check the \field{Create a
-    corresponding data partition} box
-    (Figure~\ref{fig:beautiCreateTraitSubWindow}). Then, click \field{OK}.
+%     Once in the \menutab{Traits} tab, click the \plusbutton button (or the
+%     \field{Add trait} button). Once the \field{Create or Import Trait(s)}
+%     sub-window pops up, change the \field{Name} to \fieldvalue{geography}, set
+%     the \field{Type} to \fieldvalue{discrete}, and check the \field{Create a
+%     corresponding data partition} box
+%     (Figure~\ref{fig:beautiCreateTraitSubWindow}). Then, click \field{OK}.
 
-    \begin{figure}[htbp]
-        \centering
-        \fbox{\includegraphics[width=0.4\textwidth]{../screenshots/beauti-create-trait-subwindow.jpg}}
-        \caption{Creating a new trait.}
-        \label{fig:beautiCreateTraitSubWindow}
-    \end{figure}
+%     \begin{figure}[htbp]
+%         \centering
+%         \fbox{\includegraphics[width=0.4\textwidth]{../screenshots/beauti-create-trait-subwindow.jpg}}
+%         \caption{Creating a new trait.}
+%         \label{fig:beautiCreateTraitSubWindow}
+%     \end{figure}
 
-    Next, click the \field{Guess trait values} button.  Once the sub-window
-    pops up, select \field{Defined by its order} and set its drop-down field to
-    \fieldvalue{last}. Put \fieldvalue{\_} (underscore) in the \field{with
-    delimiter} field (Figure~\ref{fig:beautiGuessTraitSubWindow}). Click
-    \field{OK}.
-    If successful, the \menutab{Traits} tab should look like
-    Figure~\ref{fig:beautiTraits}.
+%     Next, click the \field{Guess trait values} button.  Once the sub-window
+%     pops up, select \field{Defined by its order} and set its drop-down field to
+%     \fieldvalue{last}. Put \fieldvalue{\_} (underscore) in the \field{with
+%     delimiter} field (Figure~\ref{fig:beautiGuessTraitSubWindow}). Click
+%     \field{OK}.
+%     If successful, the \menutab{Traits} tab should look like
+%     Figure~\ref{fig:beautiTraits}.
 
-    \begin{figure}[htbp]
-        \centering
-        \fbox{\includegraphics[width=0.5\textwidth]{../screenshots/beauti-guess-trait-subwindow.jpg}}
-        \caption{\field{Guess trait} options.}
-        \label{fig:beautiGuessTraitSubWindow}
-    \end{figure}
+%     \begin{figure}[htbp]
+%         \centering
+%         \fbox{\includegraphics[width=0.5\textwidth]{../screenshots/beauti-guess-trait-subwindow.jpg}}
+%         \caption{\field{Guess trait} options.}
+%         \label{fig:beautiGuessTraitSubWindow}
+%     \end{figure}
 
-    \begin{figure}[htbp]
-        \centering
-        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-traits.jpg}}
-        \caption{Geographic traits successfully defined.}
-        \label{fig:beautiTraits}
-    \end{figure}
-}
+%     \begin{figure}[htbp]
+%         \centering
+%         \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-traits.jpg}}
+%         \caption{Geographic traits successfully defined.}
+%         \label{fig:beautiTraits}
+%     \end{figure}
+% }
 
 \step{Define Markov-chain models of substitution}{
-    Next, we need to set up our continuous-time Markov chain (CTMC) models
-    of substitution under the \menutab{Sites} tab.
+    Next, we need to set up our continuous-time Markov chain (CTMC) model
+    of nucleotide substitution under the \menutab{Sites} tab.
     Once in the \menutab{Sites} tab, and with \fieldvalue{crocodylia-cytb} selected
     in the left \field{Substitution Model} window, select the following options:
     \begin{compactdesc}
@@ -226,22 +230,22 @@
 
     \begin{figure}[htbp]
         \centering
-        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-cytb-model.jpg}}
+        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-cytb-model-no-geo.jpg}}
         \caption{The CTMC model of nucleotide substitution for cytb.}
         \label{fig:beautiCytbModel}
     \end{figure}
 
-    Next, select \fieldvalue{geography} in the left \field{Substitution Model}
-    window, and select \fieldvalue{Asymmetric substitution model} for the
-    \field{Discrete Trait Substitution Model} drop-down option. Check the box
-    for \field{Infer social network with BSSVS} (Figure~\ref{fig:beautiGeoModel}).
+    % Next, select \fieldvalue{geography} in the left \field{Substitution Model}
+    % window, and select \fieldvalue{Asymmetric substitution model} for the
+    % \field{Discrete Trait Substitution Model} drop-down option. Check the box
+    % for \field{Infer social network with BSSVS} (Figure~\ref{fig:beautiGeoModel}).
 
-    \begin{figure}[htbp]
-        \centering
-        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-geo-model.jpg}}
-        \caption{The CTMC model for the geographic character.}
-        \label{fig:beautiGeoModel}
-    \end{figure}
+    % \begin{figure}[htbp]
+    %     \centering
+    %     \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-geo-model.jpg}}
+    %     \caption{The CTMC model for the geographic character.}
+    %     \label{fig:beautiGeoModel}
+    % \end{figure}
 }
 
 \step{Define clock models.}{
@@ -270,15 +274,15 @@
     commonly used relaxed-clock model for the cytb data.
     For the \fieldvalue{crocodylia-cytb} data, select the \fieldvalue{Lognormal
     relaxed clock (Uncorrelated)}.
-    For the \fieldvalue{geography} trait, select the \fieldvalue{Strict clock
-    model}.
-    Make sure to click the \field{Estimate} box for both models
+    % For the \fieldvalue{geography} trait, select the \fieldvalue{Strict clock
+    % model}.
+    Make sure to click the \field{Estimate} box
     (Figure~\ref{fig:beautiClocks}).  You do not need to worry about the
     \field{Clock Model Group} options in the lower window.
 
     \begin{figure}[htbp]
         \centering
-        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-clocks.jpg}}
+        \fbox{\includegraphics[width=0.8\textwidth]{../screenshots/beauti-clocks-no-geo.jpg}}
         \caption{The clock-model settings.}
         \label{fig:beautiClocks}
     \end{figure}
@@ -306,28 +310,28 @@
     assume the tips of the tree are gene copies within a population.
 }
 
-\step{Set the \field{States} options.}{
-    Move to the \menutab{States} tab.
-    With the \fieldvalue{crocodylia-cytb} \field{Partition} selected in the
-    left column, leave all of the settings unchecked and the \field{Error
-    Model} \fieldvalue{Off} (Figure~\ref{fig:beautiCytbStates}).
-    Next, select the \fieldvalue{geography} \field{Partition} in the left column,
-    check the \field{Reconstruct states at all ancestors} box, and leave all other
-    options unchecked (Figure~\ref{fig:beautiGeoStates}).
+% \step{Set the \field{States} options.}{
+%     Move to the \menutab{States} tab.
+%     With the \fieldvalue{crocodylia-cytb} \field{Partition} selected in the
+%     left column, leave all of the settings unchecked and the \field{Error
+%     Model} \fieldvalue{Off} (Figure~\ref{fig:beautiCytbStates}).
+%     Next, select the \fieldvalue{geography} \field{Partition} in the left column,
+%     check the \field{Reconstruct states at all ancestors} box, and leave all other
+%     options unchecked (Figure~\ref{fig:beautiGeoStates}).
 
-    \begin{figure}[htbp]
-        \centering
-        \fbox{\includegraphics[width=0.7\textwidth]{../screenshots/beauti-cytb-states.jpg}}
-        \caption{The \menutab{States} settings for cytb.}
-        \label{fig:beautiCytbStates}
-    \end{figure}
-    \begin{figure}[htbp]
-        \centering
-        \fbox{\includegraphics[width=0.5\textwidth]{../screenshots/beauti-geo-states.jpg}}
-        \caption{The \menutab{States} settings for geography.}
-        \label{fig:beautiGeoStates}
-    \end{figure}
-}
+%     \begin{figure}[htbp]
+%         \centering
+%         \fbox{\includegraphics[width=0.7\textwidth]{../screenshots/beauti-cytb-states.jpg}}
+%         \caption{The \menutab{States} settings for cytb.}
+%         \label{fig:beautiCytbStates}
+%     \end{figure}
+%     \begin{figure}[htbp]
+%         \centering
+%         \fbox{\includegraphics[width=0.5\textwidth]{../screenshots/beauti-geo-states.jpg}}
+%         \caption{The \menutab{States} settings for geography.}
+%         \label{fig:beautiGeoStates}
+%     \end{figure}
+% }
 
 \step{Select priors for parameters.}{
     Move to the \menutab{Priors} tab.
@@ -376,7 +380,8 @@
     \end{figure}
 
     Next, click on the \field{Prior} column for the
-    \fieldvalue{crocodylia-cytb.ucld.mean} parameter.
+    % \fieldvalue{crocodylia-cytb.ucld.mean} parameter.
+    \fieldvalue{ucld.mean} parameter.
     This parameter controls the mean of the log-normal distribution from which
     the rates of each branch of the tree are drawn.
     Because we will be using fossils to calibrate the overall rate of substitution,
@@ -385,12 +390,13 @@
     and specify \fieldvalue{0.05} for the \field{Mean}
     (Figure~\ref{fig:beautiPriorsUcldMean}).
     Because we will be specifying node-age priors in units of millions of
-    years, the mean of 0.05 for prior on \fieldvalue{crocodylia-cytb.ucld.mean}
+    % years, the mean of 0.05 for prior on \fieldvalue{crocodylia-cytb.ucld.mean}
+    years, the mean of 0.05 for prior on \fieldvalue{ucld.mean}
     translates to a mean rate of 5\% per million years.
 
-    Specify an \fieldvalue{Exponential} prior for the
-    \fieldvalue{geography.clock.rate}, but with a \field{Mean} of
-    \fieldvalue{0.01} (Figure~\ref{fig:beautiPriorsClockRate}).
+    % Specify an \fieldvalue{Exponential} prior for the
+    % \fieldvalue{geography.clock.rate}, but with a \field{Mean} of
+    % \fieldvalue{0.01} (Figure~\ref{fig:beautiPriorsClockRate}).
 
     The default prior for the \fieldvalue{birthDeath.meanGrowthRate}
     is \fieldvalue{Uniform} from \fieldvalue{0} to \fieldvalue{10000}.
@@ -423,16 +429,17 @@
     \begin{figure}[htbp]
         \centering
         \begin{subfigure}[b]{0.3\textwidth}
-            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-ucldmean.jpg}
-            \caption{crocodylia-cytb.ucld.mean.}
+            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-ucldmean-no-geo.jpg}
+            % \caption{crocodylia-cytb.ucld.mean.}
+            \caption{ucld.mean.}
             \label{fig:beautiPriorsUcldMean}
         \end{subfigure}
-        \begin{subfigure}[b]{0.29\textwidth}
-            \includegraphics[width=\textwidth]{../screenshots/beauti-prior-clockrate.jpg}
-            \caption{geography.clock.rate.}
-            \label{fig:beautiPriorsClockRate}
-        \end{subfigure}
-        \begin{subfigure}[b]{0.31\textwidth}
+        % \begin{subfigure}[b]{0.29\textwidth}
+        %     \includegraphics[width=\textwidth]{../screenshots/beauti-prior-clockrate.jpg}
+        %     \caption{geography.clock.rate.}
+        %     \label{fig:beautiPriorsClockRate}
+        % \end{subfigure}
+        \begin{subfigure}[b]{0.325\textwidth}
             \includegraphics[width=\textwidth]{../screenshots/beauti-prior-birthrate.jpg}
             \caption{birthDeath.meanGrowthRate.}
             \label{fig:beautiPriorsBirthRate}
@@ -440,6 +447,8 @@
         \caption{Priors for clock rates and diversification rate.}
         \label{fig:beautiPriorsClocks}
     \end{figure}
+
+    \todo{We will assign you to groups for different priors on the \fieldvalue{ucld.stdev}.}
 }
 
 \step{Select priors for node ages!}{
@@ -493,4 +502,101 @@
         \caption{Priors for clock rates and diversification rate.}
         \label{fig:beautiPriorsClocks}
     \end{figure}
+
+    After setting all the above priors, your \menutab{Priors} tab window should
+    look like Figure~\ref{fig:beautiPriors}.
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=1.0\textwidth]{../screenshots/beauti-priors.jpg}}
+        \caption{The prior settings.}
+        \label{fig:beautiPriors}
+    \end{figure}
 }
+
+\step{Specify MCMC settings and generate \beast XML files.}{
+    Next, move to the \menutab{MCMC} tab.
+    Change the following settings:
+    \begin{compactdesc}
+        \centering
+        \item[\field{Length of chain:}] \fieldvalue{1000000} (1 million)
+        \item[\field{Echo state to screen every:}] \fieldvalue{1000}
+        \item[\field{Log parameters every:}] \fieldvalue{1000}
+    \end{compactdesc}
+    Leave the remaining options at their default values
+    (Figure~\ref{fig:beautiMCMC}).
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=1.0\textwidth]{../screenshots/beauti-mcmc.jpg}}
+        \caption{The MCMC settings.}
+        \label{fig:beautiMCMC}
+    \end{figure}
+
+    Next, click the \field{Generate BEAST File\ldots} in the bottom-right
+    corner of the window.
+    A subwindow will pop up warning you that some of the priors are still at
+    their default values.
+    You can ignore this and click \field{Continue}.
+    Another subwindow will appear for specifying the name and location for
+    saving the XML file. You can leave the name the same and save the file to
+    the \localfile{div-time-tutorial} folder on your desktop.
+
+    Due to time constraints, in this lab we are running a single, short
+    MCMC chain to sample from the joint posterior distribution of the model we
+    just finished specifying.
+    As a result, the posterior estimates will have a large amount of
+    MCMC sampling error.
+    For a dataset of this size, and a model with this many parameters, we need
+    to run a longer chain in BEAST to get more robust sample from the
+    posterior.
+    We will not do this today, but in general, you should always run multiple,
+    independent MCMC analyses in order to increase the posterior sample size,
+    and to help assess whether the chains converged to the same stationary
+    distribution.
+    Also, you should always run an MCMC analysis that samples from the joint
+    prior distribution (i.e., an analysis that ignores the data).  This allows
+    you to evaluate the interaction of all the priors you have specified for
+    the various parameters, and also gives you an idea of how much the data are
+    influencing certain parameter estimates.
+    We will not do this today, but you do this by checking the \field{Sample
+    from prior only-create empty alignment} box and creating another XML file
+    (make sure you change the name!).
+
+    Later, when your analysis is running, we look at results from multiple,
+    longer chains and from a chain that sampled only from the prior.
+}
+
+\intermediate{\subsection{Running the XML file with \beast}}
+
+\step{Run the XML file in \beast.}{
+    Launch the \beast program. If you are using Mac OSX or Windows, you should
+    be able to do this by double clicking on the application. 
+    After the \beast window appears, click the \field{Choose File\ldots} button,
+    and select the XML file you just created (Figure~\ref{fig:beast}).
+    Click \field{Run}. The analysis should take about 20 minutes.
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.5\textwidth]{../screenshots/beast.jpg}}
+        \caption{The \beast GUI window.}
+        \label{fig:beast}
+    \end{figure}
+}
+
+\intermediate{\subsection{Inspect previous results with \program{Tracer}}}
+
+\intermediate{
+    In the \localfile{div-time-tutorial} folder, there is a subfolder called
+    \localfile{output} containing \localfile{.log} and \localfile{.trees} files
+    from analyses I ran previously.
+}
+
+\step{Inspect previous results with \program{Tracer}}{
+    Launch the \program{Tracer} program.
+    Load the two log files in the \localfile{output} directory into
+    \program{Tracer} using \subItem{File}{Import Trace File\ldots} or the
+    \plusbutton button.
+
+}
+
