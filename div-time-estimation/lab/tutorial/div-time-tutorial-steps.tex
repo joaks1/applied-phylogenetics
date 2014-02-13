@@ -127,7 +127,7 @@
     in Figure~\ref{fig:crocFossils}). As a result, we want to check the
     \field{Stem?} box. This specifies that the node we are interested in
     calibrating is the MRCA of all \emph{Crocodylus} sequences and their next
-    closest relative (i.e., the stem node of \emph{Crocodylus}.
+    closest relative (i.e., the stem node of \emph{Crocodylus}).
     Make sure the \taxonset{Crocodylus} taxon set is highlighted, and then
     highlight all the \emph{Crocodylus} species in the \field{Excluded Taxa}
     window and move them over to the \field{Included Taxa} window.
@@ -354,7 +354,7 @@
     In the window that pops up, select an \fieldvalue{Exponential} \field{Prior
     Distribution}, and specify a \field{Mean} of \fieldvalue{0.5}.
     Do the same for \fieldvalue{CP2.mu}.
-    For \fieldvalue{CP3.mu}, also select and \fieldvalue{Exponential}
+    For \fieldvalue{CP3.mu}, also select an \fieldvalue{Exponential}
     \field{Prior}, but set the \field{Mean} to \fieldvalue{5.0}
     (Figure~\ref{fig:beautiPriorsCPmu}).
 
@@ -548,7 +548,7 @@
     As a result, the posterior estimates will have a large amount of
     MCMC sampling error.
     For a dataset of this size, and a model with this many parameters, we need
-    to run a longer chain in BEAST to get more robust sample from the
+    to run a longer chain in BEAST to get a more robust sample from the
     posterior.
     We will not do this today, but in general, you should always run multiple,
     independent MCMC analyses in order to increase the posterior sample size,
@@ -563,7 +563,7 @@
     from prior only-create empty alignment} box and creating another XML file
     (make sure you change the name!).
 
-    Later, when your analysis is running, we look at results from multiple,
+    Later, when your analysis is running, we will look at results from multiple,
     longer chains and from a chain that sampled only from the prior.
 }
 
@@ -598,5 +598,32 @@
     \program{Tracer} using \subItem{File}{Import Trace File\ldots} or the
     \plusbutton button.
 
+}
+
+\intermediate{\subsection{Summarizing the trees with \program{LogCombiner} and \program{TreeAnnotator}}}
+Once you have reviewed the log files from the independent runs in Tracer and determined that they have 
+reached stationarity, you can combine the sampled trees into a single tree file.
+
+\step{Combine tree files using \program{LogCombiner}}{
+	Launch the \program{LogCombiner} program.
+	Change the \field{File type:} to \field{Tree Files}.
+	Load the two \localfile{.trees} files in the \localfile{output} directory into
+	\program{LogCombiner} using the \plusbutton button.
+	Select the \field{Choose File\Idots} button and specify the \localfile{output}
+	directory and a file name, \localfile{crocodylia.trees????}.
+	Click \field{Run}
+}
+
+Now you have a single tree file with all the trees from the two independent runs called \localfile{crocodylia.trees????}.
+TreeAnnotator will summarize the trees and identify the topology with the best support, and calculate xyz.
+
+\step{Summarize the trees using \program{TreeAnnotator}}{
+	Launch the \program{TreeAnnotator} program.
+	Specify the burnin value as \fieldvalue{?????}.
+	For the \field{Target tree type}, choose \field{Maximum clade credibility tree}.
+	Select the \field{Input Tree File} button and select the file \localfile{crocodylia.trees????}.
+	Select the \field{Output File} button and specify the \localfile{output} directory and a 
+	file name, \localfile{crocodylia-MCC.tre}.
+	Click \field{Run}
 }
 
