@@ -98,8 +98,58 @@ The stylistic conventions for this tutorial:
 % This tutorial was written by Jamie Oaks.
 
 \section{Background Information}
+Often biologists are interested in estimating trees in which the branch lengths
+are proportional to time.
+However, because we only observe the product of time and the rate of evolution
+(differences among species), time and rate are inextricably linked.
+As a result, we have to make some assumptions about how the rate of evolution
+has changed over evolutionary history in order to tease apart the contributions
+of rate and time, and estimate branch lengths proportional to time.
+The simplest assumption (i.e., model) is that the rate of substitution is constant
+over time; a global strict clock \citep{Zuckerkandl1962}.
+However, we know that in most situations this assumption is violated.
+As a result, there has been a lot of work done on developing ``relaxed-clock''
+models that allow the rate of substitution to change over time and among
+lineages.
+These methods allow us to estimate relative divergence times across a phylogeny.
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{\includegraphics[width=0.8\textwidth]{../../images/branch-lengths.jpg}}
+        \caption{The branch lengths of a phylogenetic tree are the product of rate and time.}
+        \label{fig:branchLengths}
+    \end{figure}
+
+In order to estimate absolute divergence times, we need extra information to
+calibrate the absolute rate of evolution across the tree.
+Paleontological data (e.g., fossils) are often used for this purpose.
+If we know the date of a fossil, and can estimate its relationships to the
+extant species, we can use this information to constrain the age of a node
+in the tree.
+Combining this approach with a relaxed-clock model allows us to estimate
+a phylogeny in which the branch lengths are in units of time.
+
+\section{Programs Used in this Lab}
+We will be using the free, open-source software package, \beast (Bayesian
+Evolutionary Analysis Sampling Trees;
+\href{http://beast.bio.ed.ac.uk}{\url{http://beast.bio.ed.ac.uk}}), for
+estimating divergence times under a relaxed clock.
+\beast offers a wide range of models for analyzing molecular data in
+a Bayesian statistical framework.
+\beast also comes with several other utility programs that we will be also
+using to prepare input files (\program{BEAUTi}; Bayesian Evolutionary Analysis
+Utility) and summarize output files (\program{LogCombiner and TreeAnnotator}).
+We will also be using the programs \program{Tracer}
+(\href{http://tree.bio.ed.ac.uk/software/tracer}{\url{http://tree.bio.ed.ac.uk/software/tracer}})
+and \program{FigTree}
+(\href{http://tree.bio.ed.ac.uk/software/figtree}{\url{http://tree.bio.ed.ac.uk/software/figtree}})
+for evaluating, summarizing, and viewing results..
 
 \section{The Data}
+We will be analyzing DNA sequence data from 24 species of crocodylians
+(crocodiles, alligators, caimans, and gharials).
+The sequences are of the protein-coding \emph{cytochrome b} gene from the
+mitochondrial genome.
 
     \begin{figure}[htbp]
         \centering
