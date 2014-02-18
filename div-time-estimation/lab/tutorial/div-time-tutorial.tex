@@ -151,9 +151,15 @@ for evaluating, summarizing, and viewing results.
 \section{The Data}
 We will be analyzing DNA sequence data from 24 species of crocodylians
 (crocodiles, alligators, caimans, and gharials).
-The sequences are of the protein-coding \emph{cytochrome b} gene from the
-mitochondrial genome.
-For these data, a likelihood ratio test rejects a global strict clock model.
+The sequences are from \citet{Oaks2011}, and encode the protein-coding
+\emph{cytochrome b} gene from the mitochondrial genome (this is a single gene
+from a larger multi-locus dataset that is available at
+\href{http://datadryad.org/resource/doi:10.5061/dryad.5k9s0}{\url{http://datadryad.org/resource/doi:10.5061/dryad.5k9s0}}.
+You can download a zip archive of the aligned sequence data and other auxiliary
+files used in this tutorial from
+\href{http://www.phyletica.com/downloads/div-time-tutorial.zip}{\url{http://www.phyletica.com/downloads/div-time-tutorial.zip}}.
+
+For these data, a likelihood-ratio test rejects a global strict clock model.
 So, we will use an uncorrelated log-normally distributed (UCLD) relaxed-clock
 model \citep{Drummond2006} to account for variation in rates of substitution
 across the tree in order to estimate branches proportional to time.
