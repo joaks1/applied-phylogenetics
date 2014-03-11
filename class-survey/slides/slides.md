@@ -9,47 +9,49 @@ Class-survey Results
 Question 2
 ----------
 
-<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-3.jpg" width="720" height="480" alt="Question 2" />
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-2.jpg" width="720" height="480" alt="Question 2" />
 
 ---
 
-##Question 3
+Question 3
+----------
 
-![Question 3](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-3.jpg)
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-3.jpg" width="720" height="480" alt="Question 3" />
 
 ---
 
 Question 4
-==========
+----------
 
-![Question 4](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-4.jpg)
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-4.jpg" width="720" height="480" alt="Question 4" />
 
 ---
 
 Question 5
-==========
+----------
 
-![Question 5](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-5.jpg)
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-5.jpg" width="720" height="480" alt="Question 5" />
 
 ---
 
 Question 6
-==========
+----------
 
-![Question 6](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-6.jpg)
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-6.jpg" width="720" height="480" alt="Question 6" />
 
 ---
 
 All Questions
-=============
+-------------
 
-![All Questions](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/all-questions.jpg)
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/all-questions.jpg" width="720" height="480" alt="All Questions" />
 
 ---
 
 Overall Scores
-==============
+--------------
 
-![Overall Scores](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/student-hist.jpg)
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/student-hist.jpg" width="428.5714" height="500" alt="Overall Scores" />
 
 ---
+
