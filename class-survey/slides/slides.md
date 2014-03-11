@@ -1,5 +1,5 @@
 Class-survey Results
-====================
+--------------------
 
 2014
 ----
@@ -7,7 +7,7 @@ Class-survey Results
 ---
 
 Question 2
-==========
+----------
 
 ![Question 2](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-2.jpg)
 
