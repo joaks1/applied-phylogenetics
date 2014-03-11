@@ -51,7 +51,7 @@ All Questions
 Overall Scores
 --------------
 
-<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/student-hist.jpg" width="428.5714" height="500" alt="Overall Scores" />
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/student-hist.jpg" width="420" height="490" alt="Overall Scores" />
 
 ---
 
