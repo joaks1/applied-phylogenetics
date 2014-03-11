@@ -9,7 +9,7 @@ Class-survey Results
 Question 2
 ----------
 
-<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-3.jpg" width="780" height="520" alt="Question 2" />
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-3.jpg" width="720" height="480" alt="Question 2" />
 
 ---
 
