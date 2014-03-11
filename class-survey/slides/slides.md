@@ -37,7 +37,7 @@ Question 3
 Question 4
 ----------
 
-<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-4.jpg" width="800" alt="Question 4" />
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-4.jpg" height="490" alt="Question 4" />
 
 ---
 
