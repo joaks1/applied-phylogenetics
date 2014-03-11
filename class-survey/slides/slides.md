@@ -93,4 +93,4 @@ Overall Scores
 Thanks!
 =======
 
-<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/treeoflife.jpg" height="490" alt="tol" />
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/treeoflife.jpg" height="450" alt="tol" />
