@@ -1,12 +1,13 @@
-###Class-survey Results
+##Class-survey Results
 
-###2014
+##2014
 
 ---
 
-###Question 2
+Question 2
+----------
 
-![Question 2](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-2.jpg)
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-3.jpg" width="120" height="120" alt="Question 2" />
 
 ---
 
