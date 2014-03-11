@@ -23,7 +23,7 @@ Question 2
 Question 3
 ----------
 
-<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-3.jpg" height="490" alt="Question 3" />
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-3.jpg" width="800" alt="Question 3" />
 
 ---
 
@@ -37,7 +37,7 @@ Question 3
 Question 4
 ----------
 
-<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-4.jpg" height="490" alt="Question 4" />
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-4.jpg" width="800" alt="Question 4" />
 
 ---
 
@@ -51,7 +51,7 @@ Question 4
 Question 5
 ----------
 
-<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-5.jpg" height="490" alt="Question 5" />
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-5.jpg" width="800" alt="Question 5" />
 
 ---
 
