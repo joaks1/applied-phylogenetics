@@ -37,6 +37,13 @@ Question 5
 Question 6
 ----------
 
+<img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/slides/screenshots/question-6.jpg" height="490" alt="Question 6" />
+
+---
+
+Question 6
+----------
+
 <img src="http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-6.jpg" width="720" height="480" alt="Question 6" />
 
 ---
