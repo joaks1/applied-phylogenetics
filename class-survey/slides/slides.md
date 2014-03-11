@@ -1,3 +1,11 @@
+Class-survey Results
+====================
+
+2014
+----
+
+---
+
 Question 2
 ==========
 
@@ -30,5 +38,19 @@ Question 6
 ==========
 
 ![Question 6](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/question-6.jpg)
+
+---
+
+All Questions
+=============
+
+![All Questions](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/all-questions.jpg)
+
+---
+
+Overall Scores
+==============
+
+![Overall Scores](http://www.phyletica.com/teaching/applied-phylogenetics/class-survey/plots/2014/student-hist.jpg)
 
 ---
