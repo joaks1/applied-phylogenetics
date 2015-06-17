@@ -4,25 +4,29 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Class survey</title>
+		<title>reveal.js - The HTML Presentation Framework</title>
 
-		<meta name="description" content="Task and time management">
-		<meta name="author" content="Jamie Oaks">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="http://phyletica.github.io/assets/js/plugins/reveal.js/css/reveal.min.css">
-		<link rel="stylesheet" href="http://phyletica.github.io/assets/js/plugins/reveal.js/css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="http://phyletica.github.io/assets/js/plugins/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="http://phyletica.github.io/assets/js/plugins/reveal.js/css/theme/black.css" id="theme">
 
-		<!-- For syntax highlighting -->
+		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="http://phyletica.github.io/assets/js/plugins/reveal.js/lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<!-- Printing and PDF exports -->
 		<script>
-			document.write( '<link rel="stylesheet" href="http://phyletica.github.io/assets/js/plugins/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'http://phyletica.github.io/assets/js/plugins/reveal.js/css/print/pdf.css' : 'http://phyletica.github.io/assets/js/plugins/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
 		<!--[if lt IE 9]>
@@ -47,27 +51,25 @@
 
 		<script>
 
-			// Full list of configuration options available here:
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
 			// https://raw.githubusercontent.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
 				progress: true,
 				history: true,
 				center: true,
-                overview: true,
-                touch: true,
 
-				theme: Reveal.getQueryHash().theme || 'solarized', // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional libraries used to extend on reveal.js
+				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'http://phyletica.github.io/assets/js/plugins/reveal.js/plugin/notes/notes.js', async: true }
 				]
 			});
 
