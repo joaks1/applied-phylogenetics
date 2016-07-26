@@ -25,6 +25,8 @@ by [Tracy Heath](http://phylo.bio.ku.edu/content/tracy-heath).
 Many of the ideas for the divergence-time lab came from a great
 [tutorial](http://treethinkers.org/divergence-time-estimation-using-beast/)
 by [Tracy Heath](http://phylo.bio.ku.edu/content/tracy-heath).
+This work was made possible by funding provided to [Jamie
+Oaks](http://phyletica.org) from the National Science Foundation (DBI 1308885).
 
 
 License
